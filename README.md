@@ -1,5 +1,5 @@
-# Data Science Project
-## Relevant facts for insider trading identification
+## Data Science Project
+### Relevant facts for insider trading identification
 
 This detailed project aims to help Trade Surveillance analysts to identify *insider trading* by classifying Brazilian's relevant market facts documents relative to the their impact on stock prices. It covers an extensive pipeline: from data mining to model building and analysis.
 
