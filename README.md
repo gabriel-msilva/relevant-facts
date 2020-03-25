@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Data Science Portfolio
 
 This repository contains my Data Science and Machine Learning portfolio with some projects I have worked on.
@@ -13,3 +14,7 @@ This detailed project aims to help Trade Surveillance analysts to identify *insi
   _Themes: Insider Trading, Web Scrapping, Natural Language Processing, Logistic Regression_
 
   _Programming languages: R, Python, SQL_
+=======
+# relevant-facts
+Data Science project: Relevant facts for insider trading identification
+>>>>>>> 16c8f024b3819e52a00b64073435a18a4d0c5510
