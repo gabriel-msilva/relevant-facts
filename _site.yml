@@ -1,0 +1,21 @@
+name: "Portfolio"
+output_dir: "."
+navbar:
+  title: "Relevant Facts"
+  left:
+  - text: "Home"
+    href: index.html
+  - text: "English"
+    href: relevant-facts.html
+  - text: "Português"
+    href: fatos-relevantes.html
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    fig_caption: yes
+    code_folding: show
+    number_sections: true
+    theme: readable
+    highlight: textmate

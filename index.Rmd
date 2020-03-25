@@ -1,0 +1,34 @@
+---
+title: "Project: Relevant facts"
+author: "Gabriel Mello Silva"
+---
+
+This project is available both in english and portuguese. Use the bar above to navigate through the versions.
+
+---
+
+**Summary**
+
+This detailed project aims to help Trade Surveillance analysts to identify *insider trading* by classifying Brazilian's relevant market facts documents relative to the their impact on stock prices. It covers an extensive pipeline: from data mining to model building and analysis.
+
+  * **Themes**: Insider Trading, Web Scrapping, Natural Language Processing, Logistic Regression
+
+  * **Programming languages**: R, Python, SQL
+
+\
+
+**Resumo**
+
+Este detalhado projeto tem por objetivo ajudar analistas de *Trade Surveillance* a identificar casos de *insider trading* através da classificação de documentos de fatos relevantes de acordo com seu impacto no preço de ativos da bolsa. Contém um extensivo *pipeline*: da mineração/estruturação de dados até a construção e análise do modelo.
+
+  * **Temas**: Insider Trading, Web Scrapping, Processamento de Linguagem Natural, Regressão Logística
+
+  * **Linguagens de programação**: R, Python, SQL
+
+---
+
+Do you want to ask questions, discuss or share your opinion? Feel free to contact me.
+
+* E-mail: gabriel.zyx@gmail.com
+
+* Github: <https://github.com/gabriel-msilva/>

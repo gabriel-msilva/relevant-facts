@@ -1,0 +1,4569 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Relevant facts for insider trading identification</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 66px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h2 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h3 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h4 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h5 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.section h6 {
+  padding-top: 71px;
+  margin-top: -71px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Relevant Facts</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="relevant-facts.html">English</a>
+</li>
+<li>
+  <a href="fatos-relevantes.html">Português</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Relevant facts for insider trading identification</h1>
+<h3 class="subtitle">Baseline model based on Natural Language Processing (NLP) and logistic regression</h3>
+<h4 class="date">13/02/2020</h4>
+
+</div>
+
+
+<style>
+p.caption {
+  font-style: italic;
+}
+</style>
+<p><br />
+</p>
+<div id="introduction" class="section level1 unnumbered">
+<h1>Introduction</h1>
+<p><em>Insider information</em> is a non-public fact any which can be used to gain advantage in stock market’s trades. The use of this information in trading is an illegal practice in many contries, called <em>insider trading</em>. Insider trading is a rare occurence, however, its monitoring is important to safeguard the broker’s image and trust before its clients and regulators.</p>
+<p>In Brazil, the <em>Comissão de Valores Imobiliários</em> (<strong>CVM</strong>, Real State Comission) requires that companies listed in the national stock market (<a href="http://www.b3.com.br/en_us/">B3</a>) inform relevant market facts to the public. Some of these published facts can have more or less impact on stock prices. For example, economic data can orientate investors’ decisions, while changes in internal committee rules should not affect the market.</p>
+<p>In this project, a model based on <em>Natural Language Processing</em> (NLP) techniques is developed to help in the identification of possible cases of insider trading by reading and classifying documents of relevant facts according to the impact in the stock prices.</p>
+<p>The content is divided in three sections:</p>
+<ul>
+<li><p>In Section 1, “Data mining and wrangling”, I show how data gathering of different sources and formats was done to create the model’s variables.</p></li>
+<li><p>In Section 2, “Modelling”, we examine the results of the NLP model using linear regression with <em>elastic net</em> regularization. The results are divided in homogeneous groups, similarly to common techniques applied in Credit Scoring, with the goal of selecting critical cases for analysts.</p></li>
+<li><p>Section 3, “Conclusion”, presents suggestions for applications as well as improvements to the baseline model developed.</p></li>
+</ul>
+<p>The project uses many extenal sources to build the model database. The figure below is a flow scheme of each step to be detailed in the following sections.</p>
+<p><br />
+</p>
+<div class="figure" style="text-align: center">
+<img src="scheme.png" alt="Project flow scheme." width="60%" />
+<p class="caption">
+Project flow scheme.
+</p>
+</div>
+<p><br />
+</p>
+<div id="notes" class="section level2 unnumbered">
+<h2>Notes</h2>
+<ul>
+<li><p>The codes are written mainly in <code>R</code> language (including this document, in R Markdown). Cases where codes are written in <code>Python</code> or <code>SQL</code> are duly indicated in the text.</p></li>
+<li><p>Due to the big size of the data files, as stock market trades, those are not fully included. It is possible to find examples of some of those processed files in the <code>GitHub</code> repository.</p></li>
+<li><p>The following R packages are used in the project. For better reading, the packages are indicated as comments at the beginning of the code chunk as necessary.</p></li>
+</ul>
+<pre class="r"><code>library(readr)      # Read files
+library(dplyr)      # Data manipulation
+library(stringr)    # String manipulation
+library(lubridate)  # Date and time manipulation
+library(rvest)      # Web scrapping
+library(curl)       # Web client
+library(xml2)       # Web scrapping
+library(purrr)      # Functional programming
+library(hms)        # Time-of-day tools
+library(bizdays)    # Business days utilities
+library(vroom)      # Fast file reading
+library(data.table) # Data manipulation
+library(httr)       # HTTP tools
+library(pdftools)   # PDF reading
+library(tm)         # Text mining
+library(caret)      # Classification and regression models
+library(ggplot2)    # Data visualization</code></pre>
+<p><br />
+</p>
+</div>
+</div>
+<div id="data-mining" class="section level1">
+<h1><span class="header-section-number">1</span> Data mining and wrangling</h1>
+<div id="web-scrapping" class="section level2">
+<h2><span class="header-section-number">1.1</span> Web scrapping of relevant facts</h2>
+<p>Relevant market facts can be consulted by date or company in the <a href="https://www.rad.cvm.gov.br/ENET/frmConsultaExternaCVM.aspx">CVM website</a>. Due to the website structure, it is necessary to create a webdriver process to get relevant fact records of each month in an automated way. The code below, in <code>Python</code>, uses the <a href="https://selenium-python.readthedocs.io/">Selenium</a> webdriver to web scrap information. It needs just the start and end dates of the desired month (variable <code>dates</code>).</p>
+<pre class="python"><code># PYTHON 3 CODE
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+import pandas as pd
+import numpy as np
+
+# Set start and end dates -----------------------------------------------------
+dates = pd.date_range(start = &quot;2019-10-01&quot;, end = &quot;2019-10-31&quot;)
+
+
+# Using Chrome browser
+driver = webdriver.Chrome(&quot;C:/seleniumDriver/ChromeDriver/chromedriver.exe&quot;)
+driver.get(&quot;https://www.rad.cvm.gov.br/ENET/frmConsultaExternaCVM.aspx&quot;)
+
+wait = WebDriverWait(driver, 60)
+element = wait.until(EC.element_to_be_clickable((By.ID, &quot;rdPeriodo&quot;)))
+
+driver.find_element_by_id(&quot;rdPeriodo&quot;).click()
+
+wait = WebDriverWait(driver, 3)
+element = wait.until(EC.element_to_be_clickable((By.ID, &quot;txtDataIni&quot;)))
+
+relevant_facts = pd.DataFrame()
+
+for date in dates:
+    driver.find_element_by_id(&quot;txtDataIni&quot;).clear()
+    driver.find_element_by_id(&quot;txtDataIni&quot;).send_keys(date.strftime(&quot;%d/%m/%Y&quot;))
+
+    driver.find_element_by_id(&quot;txtDataFim&quot;).clear()
+    driver.find_element_by_id(&quot;txtDataFim&quot;).send_keys(date.strftime(&quot;%d/%m/%Y&quot;))
+
+    driver.find_element_by_id(&quot;btnConsulta&quot;).click()
+
+    wait = WebDriverWait(driver, 180)
+    element = wait.until(EC.invisibility_of_element_located((By.ID, &quot;divLoading&quot;)))
+    
+    df = pd.DataFrame()
+
+    while True:
+        table = driver.find_element_by_id(&quot;grdDocumentos&quot;).get_attribute(&quot;outerHTML&quot;)
+        table = pd.read_html(table, encoding = &quot;latin-1&quot;)
+        table = table[0]
+        
+        col = []
+        
+        if table.iloc[0, 0] != &quot;Não há dados disponíveis&quot;:
+            for i in range(len(table.index)):
+                dl_xpath = &#39;//*[@id=&quot;grdDocumentos&quot;]/tbody/tr[&#39; + \
+                            str(i + 1) + &#39;]/td[11]/i[2]&#39;
+                # Get file download parameters
+                dl = driver.find_element_by_xpath(dl_xpath).get_attribute(&quot;onclick&quot;)
+                
+                col += [dl]
+            
+            table[&quot;download&quot;] = col
+            
+            df = df.append(table)
+        
+        if &quot;disabled&quot; in driver.find_element_by_id(&quot;grdDocumentos_next&quot;).get_attribute(&quot;class&quot;):
+            break
+        else:
+            driver.find_element_by_id(&quot;grdDocumentos_next&quot;).click()
+    
+    relevant_facts = relevant_facts.append(df)
+    
+    driver.find_element_by_id(&quot;filtrosPesquisa&quot;).click()
+    
+    wait = WebDriverWait(driver, 3)
+    element = wait.until(EC.element_to_be_clickable((By.ID, &quot;txtDataIni&quot;)))
+
+relevant_facts = relevant_facts.drop(columns = &quot;Ações&quot;)
+
+relevant_facts = relevant_facts.replace(&quot;-&quot;, np.nan)
+
+relevant_facts.columns = [&quot;cvm_code&quot;, &quot;company&quot;, &quot;category&quot;, &quot;type&quot;, 
+                          &quot;kind&quot;, &quot;reference_date&quot;, &quot;issue_dttm&quot;, 
+                          &quot;status&quot;, &quot;v&quot;, &quot;modality&quot;, &quot;download&quot;]
+
+relevant_facts.to_csv(path_or_buf = (
+  &quot;datasets/en/relevant_facts_&quot; + date.strftime(&quot;%Y%m&quot;) + &quot;.csv&quot;,
+  index = False)
+
+driver.close()</code></pre>
+<p>The table bellow is an example of the first lines of the generated CSV. The important columns for the model are:</p>
+<ul>
+<li><code>cvm_code</code>: listed company’s CVM code</li>
+<li><code>company</code>: company name</li>
+<li><code>category</code>: relevant fact category</li>
+<li><code>issue_dttm</code>: date and time of the relevant fact issue by CVM</li>
+<li><code>download</code>: parameters to download attached files of each relevant fact</li>
+</ul>
+<p>We will download the files later because, as we will see, not every file needs to be downloaded. This decision <em>saves processing time and storage space in the future</em>.</p>
+<pre class="r"><code># library(readr)
+# library(dplyr)
+# library(stringr)
+# library(lubridate)
+
+relevant_facts &lt;- read_csv(&quot;datasets/en/relevant_facts_201908.csv&quot;)
+
+# Data cleaning
+relevant_facts &lt;- relevant_facts %&gt;%
+  filter(status != &quot;Cancelado&quot;) %&gt;% 
+  select(-(type:reference_date), -(status:modality)) %&gt;% 
+  mutate(company = str_sub(company, start = 8),
+         issue_dttm = issue_dttm %&gt;% 
+           str_sub(start = 10) %&gt;%
+           dmy_hm(),
+         download = download %&gt;% 
+           str_remove_all(&quot;OpenDownloadDocumentos\\(|\\)|&#39;&quot;) %&gt;%
+           str_split(&quot;,&quot;))</code></pre>
+<p><br />
+</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+cvm_code
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+company
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+category
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+issue_dttm
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+download
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+X12
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+X13
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+00092-2
+</td>
+<td style="text-align:left;">
+BANCO DA AMAZÔNIA S.A.
+</td>
+<td style="text-align:left;">
+Formulário de Referência
+</td>
+<td style="text-align:left;">
+2019-08-01 12:50:00
+</td>
+<td style="text-align:left;">
+c(“85964”, “2”, “000922FRE201920190200085964-70”, "")
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00112-0
+</td>
+<td style="text-align:left;">
+BCO ESTADO DE SERGIPE S.A. - BANESE
+</td>
+<td style="text-align:left;">
+Dados Econômico-Financeiros
+</td>
+<td style="text-align:left;">
+2019-08-01 09:20:00
+</td>
+<td style="text-align:left;">
+c(“228948”, “1”, “703056”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00115-5
+</td>
+<td style="text-align:left;">
+BANESTES S.A. - BCO EST ESPIRITO SANTO
+</td>
+<td style="text-align:left;">
+Dados Econômico-Financeiros
+</td>
+<td style="text-align:left;">
+2019-08-01 17:55:00
+</td>
+<td style="text-align:left;">
+c(“229036”, “1”, “703146”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00210-0
+</td>
+<td style="text-align:left;">
+CAMBUCI S.A.
+</td>
+<td style="text-align:left;">
+Dados Econômico-Financeiros
+</td>
+<td style="text-align:left;">
+2019-08-01 18:09:00
+</td>
+<td style="text-align:left;">
+c(“229044”, “1”, “703155”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00210-0
+</td>
+<td style="text-align:left;">
+CAMBUCI SA
+</td>
+<td style="text-align:left;">
+ITR
+</td>
+<td style="text-align:left;">
+2019-08-01 18:04:00
+</td>
+<td style="text-align:left;">
+c(“85975”, “1”, “002100ITR300620190100085975-73”, “ITR”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00242-9
+</td>
+<td style="text-align:left;">
+CELULOSE IRANI S.A.
+</td>
+<td style="text-align:left;">
+Comunicado ao Mercado
+</td>
+<td style="text-align:left;">
+2019-08-01 09:28:00
+</td>
+<td style="text-align:left;">
+c(“228950”, “1”, “703058”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00243-7
+</td>
+<td style="text-align:left;">
+CENTRAIS ELET BRAS S.A. - ELETROBRAS
+</td>
+<td style="text-align:left;">
+Comunicado ao Mercado
+</td>
+<td style="text-align:left;">
+2019-08-01 19:07:00
+</td>
+<td style="text-align:left;">
+c(“229116”, “1”, “703227”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00243-7
+</td>
+<td style="text-align:left;">
+CENTRAIS ELET BRAS S.A. - ELETROBRAS
+</td>
+<td style="text-align:left;">
+Fato Relevante
+</td>
+<td style="text-align:left;">
+2019-08-01 20:05:00
+</td>
+<td style="text-align:left;">
+c(“229125”, “1”, “703236”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00320-4
+</td>
+<td style="text-align:left;">
+CIA ESTADUAL GER.TRANS.ENER.ELET-CEEE-GT
+</td>
+<td style="text-align:left;">
+Valores Mobiliários negociados e detidos (art. 11 da Instr. CVM nº 358)
+</td>
+<td style="text-align:left;">
+2019-08-01 08:17:00
+</td>
+<td style="text-align:left;">
+c(“228930”, “1”, “703038”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+00320-4
+</td>
+<td style="text-align:left;">
+CIA ESTADUAL GER.TRANS.ENER.ELET-CEEE-GT
+</td>
+<td style="text-align:left;">
+Valores Mobiliários negociados e detidos (art. 11 da Instr. CVM nº 358)
+</td>
+<td style="text-align:left;">
+2019-08-01 08:19:00
+</td>
+<td style="text-align:left;">
+c(“228931”, “1”, “703039”, “IPE”)
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+</p>
+</div>
+<div id="companies-instrument-symbol" class="section level2">
+<h2><span class="header-section-number">1.2</span> Companies’ instrument symbol</h2>
+<p>Note that only the <code>cvm_code</code> and the <code>company</code> name are included in the previous data frame <code>relevant_facts</code> but not the instrument symbol traded in the market. So, we need to look for this information somewhere else.</p>
+<p>We can consult the <a href="http://www.b3.com.br/pt_br/produtos-e-servicos/negociacao/renda-variavel/empresas-listadas.htm">Listed Companies</a> in the B3 website to get <em>some</em> of the instrument symbols. Not every instrument symbol is listed but it is enough to get the first four characters of the code to find all the instrument symbols related to a company.</p>
+<p>For example, the company Petrobras (“PETROLEO BRASILEIRO S.A. PETROBRAS”) has PETR3 and PETR4 as listed instrument symbols. From the root of the code, <strong>PETR</strong>, it is possible to identify all trades stocks for the company, like <strong>PETR</strong>4F (Equity-Odds) e <strong>PETR</strong>L30 (and many others in the Options market).</p>
+<p>We need another web scrapping process, but there is no need to use Selenium again. It is possible to access directly the link for each company from the CVM code <code>cvm_code</code> and read the HTML content with the package <a href="https://github.com/tidyverse/rvest">rvest</a>, which makes this process simpler and faster.</p>
+<pre class="r"><code># library(rvest)
+
+cvm_codes &lt;- file_path %&gt;% 
+  read_csv() %&gt;% 
+  pull(cvm_code) %&gt;% 
+  str_remove(&quot;-&quot;) %&gt;% 
+  as.numeric() %&gt;% 
+  unique()
+
+extract_instr_symbol &lt;- function(code) {
+  url &lt;- paste0(&quot;http://bvmf.bmfbovespa.com.br/cias-listadas/empresas-listadas/&quot;,
+                &quot;ResumoEmpresaPrincipal.aspx?codigoCvm=&quot;, code)
+  
+  read_html(url) %&gt;% 
+    html_nodes(&quot;iframe&quot;) %&gt;% 
+    magrittr::extract(2) %&gt;% 
+    html_attr(&quot;src&quot;) %&gt;%
+    str_remove(&quot;../../&quot;) %&gt;% 
+    str_c(&quot;http://bvmf.bmfbovespa.com.br/&quot;, .) %&gt;% 
+    read_html() %&gt;%
+    html_nodes(&#39;table[class=&quot;ficha responsive&quot;]&#39;) %&gt;% 
+    html_children() %&gt;% 
+    magrittr::extract(2) %&gt;% 
+    html_nodes(&quot;a&quot;) %&gt;% 
+    html_text() %&gt;% 
+    setdiff(&quot;Mais Códigos&quot;)
+}
+
+instrument_symbols &lt;- purrr::map(cvm_codes, extract_instr_symbol)
+
+df_instr &lt;- purrr::map2_dfr(
+  instrument_symbols, cvm_codes,
+  ~ tibble(code = .y, instr_symbol = paste(.x, collapse = &quot;, &quot;))
+  ) %&gt;% 
+  filter(instr_symbol != &quot;&quot;)
+
+relevant_facts &lt;- relevant_facts %&gt;%
+  mutate(code = as.numeric(str_remove(cvm_code, &quot;-&quot;))) %&gt;% 
+  left_join(df_instr, by = &quot;code&quot;) %&gt;% 
+  select(-code)</code></pre>
+<p><br />
+</p>
+</div>
+<div id="stock-market-trades" class="section level2">
+<h2><span class="header-section-number">1.3</span> Stock market trades</h2>
+<p>B3 freely publishes (anonymous) data of all trades in the brazilian stock market on its FTP server <a href="ftp://ftp.bmf.com.br/marketdata">Market Data</a><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>Trades are available in the markets:</p>
+<ul>
+<li><p>Equity</p></li>
+<li><p>Equity-Odds</p></li>
+<li><p>Options</p></li>
+<li><p>BMF</p></li>
+</ul>
+<p>A great differential in relation to other popular free services, like <a href="https://finance.yahoo.com/">Yahoo Finance</a>, is the detail level of data: there are records with microseconds precision for each trade. This allows more diverse research, as we are not confined in daily aggregations.</p>
+<p>The data is stored in compressed text files (.zip/.gz) divided by market type and trade date. The code below defines three functions, <code>bdi_get_ftp()</code>, <code>bdi_download()</code> and <code>bdi_read()</code>, to locate, download and read those raw files. The functions are strongly inspired in the <a href="https://cran.r-project.org/web/packages/GetHFData/index.html">GetHFData</a> package. We are going to deal only with trade files (<code>NEG_***</code>). The <a href="ftp://ftp.bmf.com.br/marketdata/NEG_LAYOUT_english.txt">complete structure</a> of the files can be consulted in the Market Data FTP server.</p>
+<blockquote>
+<p>Some files are large: about 1 GB when decompressed! CSV files of ~350 MB are generated at the end of the processing. For this reason, it may be needed to process the files in chunks depending on the memory capacity.</p>
+</blockquote>
+<pre class="r"><code># require(curl)
+# require(xml2)
+
+
+bdi_get_ftp &lt;- function(market_type = c(&quot;Equity&quot;, &quot;Equity-Odds&quot;, &quot;Options&quot;, &quot;BMF&quot;), 
+                        data_type = c(&quot;trades&quot;, &quot;orders&quot;)) {
+  # Reads the FTP server contents for trades/orders of a specified market type
+  # and returns a data frame containing information about the available files
+  # for download.
+  
+  # Arguments:
+  # `market_type`   Market type as divided by B3
+  # `data_type`     File type: trades or orders
+  
+  market_type &lt;- match.arg(market_type)
+  
+  data_type &lt;- match.arg(arg = data_type)
+  
+  if (!curl::has_internet()) {
+    stop(&quot;Internet connection not found.&quot;)
+  }
+  
+  ftp_path &lt;-  paste0(
+    &quot;ftp://ftp.bmf.com.br/MarketData/&quot;,
+    case_when(
+      any(market_type == c(&quot;Equity&quot;, &quot;Equity-Odds&quot;)) ~ &quot;Bovespa-Vista/&quot;,
+      market_type == &quot;Options&quot;                       ~ &quot;Bovespa-Opcoes/&quot;,
+      market_type == &quot;BMF&quot;                           ~ &quot;BMF/&quot;
+    )
+  )
+  
+  if (data_type == &quot;trades&quot;) {
+    files_pattern &lt;- &quot;NEG_(.*?)\\.(zip|gz)&quot;
+  } else {
+    files_pattern &lt;- &quot;OFER_(.*?)\\.(zip|gz)&quot;
+  }
+  
+  cat(&quot;Reading ftp contents for &quot;, market_type, &quot; (&quot;, data_type, &quot;)\n&quot;, sep = &quot;&quot;)
+  
+  ftp_files &lt;- read_html(ftp_path) %&gt;%
+    xml_find_all(&quot;//tr&quot;) %&gt;%
+    xml_children() %&gt;%
+    xml_text(trim = TRUE) %&gt;%
+    matrix(ncol = 4, byrow = TRUE) %&gt;%
+    `[`(c(-1, -2), c(-1, -4))
+  
+  tbl_ftp &lt;- tibble(
+    market = market_type,
+    file_name = ftp_files[, 1],
+    date = str_extract(ftp_files[, 1], pattern = &quot;[0-9]{8}&quot;),
+    file_size = case_when(
+      str_detect(ftp_files[, 2], &quot;MB&quot;) ~ 
+        as.numeric(str_extract(ftp_files[, 2], &quot;[0-9]+&quot;)) * 1024^2,
+      str_detect(ftp_files[, 2], &quot;KB&quot;) ~ 
+        as.numeric(str_extract(ftp_files[, 2], &quot;[0-9]+&quot;)) * 1024,
+      str_detect(ftp_files[, 2], &quot;bytes&quot;) ~ 
+        as.numeric(str_extract(ftp_files[, 2], &quot;[0-9]+&quot;)),
+      TRUE ~ NA_real_
+    ),
+    url = paste0(ftp_path, ftp_files[, 1])
+  ) %&gt;%
+    mutate(date = ymd(date)) %&gt;%
+    filter(str_detect(file_name, pattern = files_pattern))
+  
+  # remove or not FRAC market files
+  if (market_type == &quot;Equity-Odds&quot;) {
+    tbl_ftp &lt;- filter(tbl_ftp, str_detect(file_name, pattern = &quot;FRAC&quot;))
+  } else {
+    tbl_ftp &lt;- filter(tbl_ftp, str_detect(file_name, pattern = &quot;FRAC&quot;, negate = TRUE))
+  }
+  
+  if (data_type == &quot;orders&quot;) {
+    tbl_ftp &lt;- tbl_ftp %&gt;%
+      mutate(order_type = ifelse(str_detect(file_name, pattern = &quot;VDA&quot;),
+                                 &quot;Sell&quot;, &quot;Buy&quot;)) %&gt;% 
+      select(market, order_type, everything()) %&gt;% 
+      group_by(order_type)
+  }
+  
+  tbl_ftp &lt;- tbl_ftp %&gt;% 
+    mutate(file_warning = file_size &lt; mean(file_size) - 2 * sd(file_size)) %&gt;% 
+    ungroup()
+  
+  if (sum(tbl_ftp$file_warning) &gt; 0) {
+    warning(&quot;Some files seem to be corrupted. Consider revising the files &quot;,
+            &quot;where `file_warning` column&#39;s value is TRUE.&quot;)
+  }
+  
+  tbl_ftp
+}
+
+
+bdi_download &lt;- function(file_name, url, file_size, ..., dest_dir = getwd(), max_tries = 10L) {
+  # Downloads the specified files from Market Data FTP and invisibly returns
+  # the full path of the download file. Best used in conjunction with the output of 
+  # `bdi_get_ftp()` function.
+  
+  # Arguments:
+  # `file_name`   File name
+  # `url`         URL where the file is located
+  # `file_size`   Approximate file size (from FTP server)
+  # `dest_dir`    Destiny directory path
+  # `max_tries`   Max number of download attempts
+  
+  dest_file &lt;- paste0(dest_dir, file_name)
+  
+  if (file.exists(dest_file) &amp; file.size(dest_file) &gt;= file_size) {
+    warning(&quot;File already exists in destination directory. Skipping download.&quot;)
+  } else {
+    i &lt;- 1L
+    
+    while (i &lt;= max_tries) {
+      download.file(url, dest_file, method = &quot;libcurl&quot;)
+      
+      if (file.size(dest_file) &gt;= file_size) {
+        break
+      }
+      
+      cat(&quot;File download has failed. Trying again [&quot;, 
+          i, &quot; of &quot;, max_tries, &quot;]\n&quot;, sep = &quot;&quot;)
+      
+      i &lt;- i + 1L
+    }
+    
+    if (i == max_tries) {
+      stop(&quot;Failed to download file: reached max number of attempts.
+           Check connection or try again later.&quot;)
+    }
+  }
+  
+  invisible(dest_file)
+}
+
+
+bdi_read &lt;- function(file) {
+  # Reads and cleans the download filess from Market Data FTP
+  #
+  # Arguments:
+  # `file`    File path
+  
+  col_names = c(&quot;session_date&quot;, &quot;instrument_symbol&quot;, &quot;trade_number&quot;, 
+                &quot;trade_price&quot;, &quot;traded_quantity&quot;, &quot;trade_time&quot;, 
+                &quot;trade_indicator&quot;, &quot;buy_order_date&quot;, &quot;buy_order_seq_number&quot;, 
+                &quot;buy_order_sec_id&quot;, &quot;aggro_buy_order_indicator&quot;, 
+                &quot;sell_order_date&quot;, &quot;sell_order_seq_number&quot;, &quot;sell_order_sec_id&quot;,
+                &quot;aggro_sell_order_indicator&quot;, &quot;cross_trade_indicator&quot;, 
+                &quot;buy_member&quot;, &quot;sell_member&quot;)
+  
+  cols &lt;- cols_only(session_date = col_date(format = &quot;%Y-%m-%d&quot;),
+                    instrument_symbol = col_character(),
+                    trade_number = col_integer(),
+                    trade_price = col_number(), 
+                    traded_quantity = col_number(), 
+                    trade_time = col_time(format = &quot;%H:%M:%OS&quot;), 
+                    trade_indicator = col_integer(),
+                    buy_order_date = col_date(format = &quot;%Y-%m-%d&quot;),
+                    buy_order_seq_number = col_character(),
+                    buy_order_sec_id = col_character(),
+                    aggro_buy_order_indicator = col_integer(), 
+                    sell_order_date = col_date(format = &quot;%Y-%m-%d&quot;),
+                    sell_order_seq_number = col_character(),
+                    sell_order_sec_id = col_character(),
+                    aggro_sell_order_indicator = col_integer(),
+                    cross_trade_indicator = col_integer(),
+                    buy_member = col_number(),
+                    sell_member = col_number())
+  
+  cat(&quot;Reading `&quot;, file, &quot;`\n&quot;, sep = &quot;&quot;)
+  
+  df &lt;- suppressWarnings(
+    read_delim(file, delim = &quot;;&quot;, 
+               escape_double = FALSE, 
+               col_names = col_names, 
+               col_types = cols,
+               trim_ws = TRUE, 
+               skip = 1)) %&gt;%
+    # Remove canceled trades
+    filter(!is.na(session_date), trade_indicator == 1L) %&gt;%
+    mutate(trade_date_time = ymd_hms(paste(session_date, trade_time),
+                                     tz = &quot;America/Recife&quot;))
+  
+  df
+}</code></pre>
+<p>These function can be used in combination with the <a href="https://purrr.tidyverse.org/">purrr</a> package to process the trade data of the whole month. Note that in order to download the data for a specific month, as Octuber in the code below, I also include the <strong>last day of the previous month</strong> and the <strong>first day of the next month</strong>. The reason for this will be clear when we define the response variable of the model.</p>
+<pre class="r"><code># library(purrr)
+
+markets &lt;- c(&quot;Equity&quot;, &quot;Equity-Odds&quot;, &quot;Options&quot;, &quot;BMF&quot;)
+
+ftp_files &lt;- map_dfr(markets, bdi_get_ftp) %&gt;%
+  filter(date &gt;= &quot;2019-09-30&quot;, date &lt;= &quot;2019-11-01&quot;)
+
+ftp_files %&gt;%
+  select(file_name, url, file_size) %&gt;%
+  pwalk(bdi_download, dest_dir = &quot;datasets&quot;)
+
+bdi_raw &lt;- map2_dfr(.x = tbl_files$file_name, .y = tbl_files$market,
+                    ~ bdi_read(.x) %&gt;%
+                      mutate(market = factor(.y, levels = markets))) %&gt;%
+  arrange(session_date, instrument_symbol, trade_time)</code></pre>
+<p>Each trade day can be stored in a CSV file, for example. The table below is an example of the first lines of the trade day 2019-08-01.</p>
+<p><br />
+</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+session_date
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+instrument_symbol
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+trade_price
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+traded_quantity
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+trade_time
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+trade_indicator
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+aggro_buy_order_indicator
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+cross_trade_indicator
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+buy_member
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+sell_member
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+trade_date_time
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+market
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.84
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:04:17
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:04:17
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.86
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:06:24
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:06:24
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:08:48
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+386
+</td>
+<td style="text-align:left;">
+2019-08-01 13:08:48
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.88
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:08:48
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+386
+</td>
+<td style="text-align:left;">
+2019-08-01 13:08:48
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.86
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:08:48
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+386
+</td>
+<td style="text-align:left;">
+2019-08-01 13:08:48
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:15:00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:15:00
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.86
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:15:00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:15:00
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.86
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:left;">
+10:15:00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:15:00
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:15:00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:15:00
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.86
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:15:53
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2019-08-01 13:15:53
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.86
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:15:53
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2019-08-01 13:15:53
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:17:11
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:17:11
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:17:11
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:17:11
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.88
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:17:11
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:17:11
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.89
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:20:26
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+262
+</td>
+<td style="text-align:left;">
+2019-08-01 13:20:26
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.89
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:20:27
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:20:27
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+700
+</td>
+<td style="text-align:left;">
+10:20:32
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+23
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:20:32
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.87
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:20:32
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:20:32
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.88
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:23:12
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:left;">
+2019-08-01 13:23:12
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.89
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:23:37
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:23:37
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.89
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:23:37
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:23:37
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.92
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:25:56
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+386
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:25:56
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.95
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:25:56
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:25:56
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.96
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:25:57
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+174
+</td>
+<td style="text-align:left;">
+2019-08-01 13:25:57
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+15.05
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:34:26
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:34:26
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+15.06
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:34:26
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2019-08-01 13:34:26
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+15.00
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:35:05
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:35:05
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+15.00
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:37:42
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:37:42
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+15.00
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:40:06
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:left;">
+2019-08-01 13:40:06
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+15.00
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:40:06
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:left;">
+2019-08-01 13:40:06
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.98
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:40:45
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:left;">
+2019-08-01 13:40:45
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.98
+</td>
+<td style="text-align:right;">
+2200
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.98
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+107
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.98
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.99
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.98
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.97
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.97
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.96
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.98
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:42:03
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:left;">
+2019-08-01 13:42:03
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.97
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:43:59
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:43:59
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.97
+</td>
+<td style="text-align:right;">
+300
+</td>
+<td style="text-align:left;">
+10:44:20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:44:20
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.97
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:44:20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+16
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:44:20
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.96
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:44:20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:44:20
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.96
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:44:20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:44:20
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.96
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:44:20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+308
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:left;">
+2019-08-01 13:44:20
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.96
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:left;">
+10:44:20
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:left;">
+2019-08-01 13:44:20
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.97
+</td>
+<td style="text-align:right;">
+200
+</td>
+<td style="text-align:left;">
+10:46:08
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:left;">
+2019-08-01 13:46:08
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.95
+</td>
+<td style="text-align:right;">
+400
+</td>
+<td style="text-align:left;">
+10:47:38
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1618
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:47:38
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2019-08-01
+</td>
+<td style="text-align:left;">
+AALR3
+</td>
+<td style="text-align:right;">
+14.95
+</td>
+<td style="text-align:right;">
+500
+</td>
+<td style="text-align:left;">
+10:47:38
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+2019-08-01 13:47:38
+</td>
+<td style="text-align:left;">
+Equity
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+</p>
+</div>
+<div id="response-variable" class="section level2">
+<h2><span class="header-section-number">1.4</span> Response variable</h2>
+<p>The trade data previously obtained will be used to make a response variable that identifies if there is a significant variation in the price of a company’s instrument symbol after the publication of a relevant fact. <em>Not necessarily</em> the variation detected is due to the relevant fact.</p>
+<p><br />
+</p>
+<div id="definition" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Definition</h3>
+<p>The response variable <code>response_price</code> is a logical variable (<code>TRUE</code>/<code>FALSE</code>) defined as follows:</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the mean <span class="math inline">\(\mu_{before}\)</span> and standard deviation <span class="math inline">\(\sigma_{before}\)</span> of the prices for <strong>each instrument symbol</strong> of the company within the period of <strong>three hours before</strong> the relevant fact;</p></li>
+<li><p>Calculate the mean <span class="math inline">\(\mu_{after}\)</span> of prices for <strong>each instrument</strong> of the company within the period of <strong>one hour after</strong> the relevant fact;</p></li>
+<li><p>If <span class="math inline">\(|\mu_{after} - \mu_{before}| &gt; 3 \sigma_{after}\)</span> for <em>at least one instrument symbol</em> of the company, the response variable is set to <code>TRUE</code>;</p></li>
+<li><p>Otherwise, the response variable is set to <code>FALSE</code>. If it is not possible to calcute the standard deviation because there are not enough data points (none or one), the response variable is set to <code>NA</code>.</p></li>
+</ol>
+<p>The figures below are positive (<code>TRUE</code>) and negative (<code>FALSE</code>) examples, respectively, of the response variable for two instrument symbols. Both plots show an easy way to visualize the response variable: if the mean of the price after the relevant fact is outside the “tunnel” of <span class="math inline">\(\pm 3 \sigma\)</span> then the response is positive.</p>
+<p><br />
+</p>
+<div class="figure" style="text-align: center">
+<img src="plots/BBAS3_en.png" alt="Positive response variable. Mean after the relevant fact outside the tunnel of 3 standard deviations in relation to the mean before the fact." width="90%" />
+<p class="caption">
+Positive response variable. Mean after the relevant fact outside the tunnel of 3 standard deviations in relation to the mean before the fact.
+</p>
+</div>
+<p><br />
+</p>
+<div class="figure" style="text-align: center">
+<img src="plots/EGIE3_en.png" alt="Negative response variable. Mean after the relevant fact inside the tunnel of 3 standard deviations in relation to the mean before the fact." width="90%" />
+<p class="caption">
+Negative response variable. Mean after the relevant fact inside the tunnel of 3 standard deviations in relation to the mean before the fact.
+</p>
+</div>
+<p><br />
+</p>
+<p>The period computation considers more particular cases. The <a href="http://www.b3.com.br/pt_br/solucoes/plataformas/puma-trading-system/para-participantes-e-traders/horario-de-negociacao/acoes/">market trades’ schedule</a> happens on working days from 10:00 to 18:00 – offer cancellations or after-market schedule are not considered. On ther other hand, the relevant facts can be published at any day or time.</p>
+<p>Thus, if a relevant fact is published outside the trade schedule or at a weekend/holiday, the last or next hours available are used to define the periods before and after the publishing, respectively. Besides that, facts published between 10:00 and 11:00 or between 17:00 and 18:00, this hour is complemented similarly to the previous rule.</p>
+<p>In the code below, the lower and upper limits of the periods before and after the publisng of a relevent fact, <code>dttm_before</code> and <code>dttm_after</code>, are computed. These limits are parameterized according to the variables <code>delta_before</code> and <code>delta_after</code> (in minutes) that define the observed time window. The package <a href="http://wilsonfreitas.github.io/posts/bizdays-dias-uteis-no-r.html">bizdays</a> offers many conviniences for calculations with working days in the calendar of the Brazilian Association of Financial and Capital Market (<a href="https://www.anbima.com.br/feriados/feriados.asp">ANBIMA</a>) – or any other calendar.</p>
+<p>At the end, relevant facts of companies in which it was not found an instrument symbol (<em>i.e.</em> when <code>is.na(root_instr)</code>) are excluded.</p>
+<pre class="r"><code># library(hms)
+# library(bizdays)
+
+bizdays.options$set(default.calendar = &quot;Brazil/ANBIMA&quot;)
+
+delta_before &lt;- 3 * 60 # 180 minutes
+delta_after &lt;- 60      #  60 minutes
+
+n_sd &lt;- 3L # Number of standard deviations for the tunnel
+
+
+relevant_facts &lt;- relevant_facts %&gt;% 
+  mutate(root_instr = str_sub(instr_symbol, end = 4)) %&gt;% 
+  mutate(
+    # dttm_before = inferior limit of period before `issue_dttm`
+    dttm_before = case_when(
+      !is.bizday(issue_dttm) | hour(issue_dttm) &lt; 10 ~ 
+        as_hms((18 * 60 - delta) * 60) %&gt;% 
+        as.character() %&gt;% 
+        paste(add.bizdays(date(issue_dttm), -1), .) %&gt;%
+        ymd_hms(),
+      hms::as_hms(issue_dttm) &lt; (10 * 60 + delta) * 60 ~ 
+        as_hms(18 * 60 * 60 - ((10 * 60 + delta) * 60 - as_hms(issue_dttm))) %&gt;% 
+        as.character() %&gt;%
+        paste(add.bizdays(date(issue_dttm), -1), .) %&gt;%
+        ymd_hms(),
+      hour(issue_dttm) &gt;= 18 ~ 
+        as_hms((18 * 60 - delta) * 60) %&gt;%
+        as.character() %&gt;% 
+        paste(date(issue_dttm), .) %&gt;%
+        ymd_hms(),
+      TRUE ~ issue_dttm - minutes(delta)
+    ),
+    # dttm_after = superior limit of period after `issue_dttm`
+    dttm_after = case_when(
+      !is.bizday(issue_dttm) | hour(issue_dttm) &gt;= 18 ~
+        as_hms((10 * 60 + delta) * 60) %&gt;% 
+        as.character() %&gt;% 
+        paste(add.bizdays(date(issue_dttm), 1), .) %&gt;%
+        ymd_hms(),
+      hms::as_hms(issue_dttm) &gt; (18 * 60 - delta) * 60 ~ 
+        as_hms(10 * 60 * 60 + (as_hms(issue_dttm) - (18 * 60 - delta) * 60)) %&gt;% 
+        as.character() %&gt;%
+        paste(add.bizdays(date(issue_dttm), 1), .) %&gt;%
+        ymd_hms(),
+      hour(issue_dttm) &lt; 10 ~ 
+        as_hms((10 * 60 + delta) * 60) %&gt;%
+        as.character() %&gt;% 
+        paste(date(issue_dttm), .) %&gt;%
+        ymd_hms(),
+      TRUE ~ issue_dttm + minutes(delta)
+    )
+  ) %&gt;%
+  filter(!is.na(root_instr))</code></pre>
+<p>To compute the response variable, we need to calculate the mean and standard deviation for each instrument symbol related to a company for each relevant fact published in a given time. We are looking for trades in the dataset <code>bdi_raw</code>, but filtering different periods and instruments for each line of <code>relevant_facts</code> to, then, calculate the summary quantities.</p>
+<p>First, let’s load the market data files previously processed.</p>
+<blockquote>
+<p>Note that, as mentioned, the trade data of the last day of the previous month and the first day of the next month are also loaded because of the way relevant facts published outside the trade schedule are handled.</p>
+</blockquote>
+<pre class="r"><code># library(vroom)
+
+file_paths &lt;- list.files(&quot;BDI-Raw/&quot;, pattern = &quot;BDI-Raw&quot;, full.names = TRUE)
+
+bdi_raw &lt;- file_paths %&gt;%
+  purrr::map_dfr(vroom, &quot;,&quot;, col_types = cols_only(session_date = &quot;D&quot;,
+                                                   trade_time = &quot;c&quot;,
+                                                   instrument_symbol = &quot;c&quot;,
+                                                   trade_price = &quot;d&quot;,
+                                                   traded_quantity = &quot;d&quot;)) %&gt;%
+  mutate(root_instrument = str_sub(instrument_symbol, 1, 4)) %&gt;% 
+  filter(trade_time &gt;= &quot;10:00:00.000&quot;, trade_time &lt;= &quot;18:00:00.000&quot;,
+         root_instrument %in% unique(relevant_facts$root_instr)) %&gt;%
+  mutate(trade_dttm = ymd_hms(paste(session_date, trade_time))) %&gt;% 
+  select(-session_date, -trade_time) %&gt;% 
+  filter(market != &quot;Options&quot;, 
+         market == (&quot;BMF&quot; | 
+                      nchar(instrument_symbol) &lt;= 6 | 
+                      str_detect(instrument_symbol, &quot;F$&quot;))
+         )</code></pre>
+<p>The last <code>filter</code> excludes the instrument symbols of the Options market (actually, some symbols of Options are included in Equity files). We do this because the Options market have many granular instruments, usually traded at lower prices and in a lower volume in relation to equities, what can destabilize the response variable. The figures below illustrate this problem for instruments of Bradesco Bank. Note that the granularity of dozens of Options’ instruments symbols (BBDCH348, BBDCH358, …) generates a false perception of the price oscillation as it is more sensible to small variations.</p>
+<p><br />
+</p>
+<div class="figure" style="text-align: center">
+<img src="plots/bradesco_all%20(en).png" alt="All instruments' trades of Bradesco. Shares in Options market have distinct prices and quantities from Equity and Equity-Odds markets." width="90%" />
+<p class="caption">
+All instruments’ trades of Bradesco. Shares in Options market have distinct prices and quantities from Equity and Equity-Odds markets.
+</p>
+</div>
+<p><br />
+</p>
+<div class="figure" style="text-align: center">
+<img src="plots/bradesco_grid%20(en).png" alt="Illustration of response variable computation for Equity + Equity-Odds and Options markets. The granularity and lower volume of Options may unbalance the computation of the response variable." width="90%" />
+<p class="caption">
+Illustration of response variable computation for Equity + Equity-Odds and Options markets. The granularity and lower volume of Options may unbalance the computation of the response variable.
+</p>
+</div>
+<p><br />
+</p>
+</div>
+<div id="computation" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Computation</h3>
+<p>In a <code>SQL</code> query, the computation of the mean and standard deviation could be done as follows for a period <em>before</em> the relevant fact (and similarly for the period <em>after</em> the fact):</p>
+<pre class="sql"><code>-- SQL CODE
+
+SELECT fr.doc_id,
+       bdi.instrument_symbol,
+       MEAN(bdi.trade_price) AS before_price_mean,
+       STDEVP(bdi.trade_price) AS before_price_sd
+FROM relevant_facts AS fr
+LEFT JOIN bdi_raw as bdi
+  ON (fr.root_instr = bdi.root_instrument) AND
+     (bdi.trade_dttm BETWEEN fr.dttm_before AND fr.issue_dttm)
+GROUP BY fr.doc_id, bdi.instrument_symbol;</code></pre>
+<p>This type of query is called <em>non-equi join</em>, where we have a <code>JOIN</code> operation done under an inequality condition (<code>&gt;</code>, <code>&lt;=</code>, <code>BETWEEN</code>, …). It is not possible to do this type of operation directly with <code>dplyr::left_join()</code> followed by <code>dplyr::summarise()</code> because the first function only works in equality conditions. While it is possible to call <code>left_join()</code> for all date-times and then call <code>filter()</code>, the amount of data renders this operation infeasible.</p>
+<p>The first attempt, still using <code>dplyr</code> and <code>purrr</code>, was to define a function <code>dplyr_summarise_facts()</code> and apply it to every line of <code>relevant_facts</code>.</p>
+<pre class="r"><code>dplyr_summarise_facts &lt;- function(
+  doc_id, root_instr, issue_dttm, dttm_before, dttm_after, ..., .side
+  ) {
+  .side &lt;- match.arg(.side, c(&quot;before&quot;, &quot;after&quot;))
+  
+  if (.side == &quot;before&quot;) {
+    dttm_interval &lt;- interval(dttm_before, issue_dttm)
+  } else {
+    dttm_interval &lt;- interval(issue_dttm, dttm_after)
+  }
+  
+  result &lt;- bdi_raw %&gt;%
+    filter(root_instrument == root_instr,
+           trade_dttm %within% dttm_interval) %&gt;%
+    group_by(instrument_symbol) %&gt;% 
+    summarise(n = n(),
+              price_mean = mean(trade_price),
+              price_sd = sd(trade_price)) %&gt;%
+    rename_at(c(&quot;n&quot;, &quot;price_mean&quot;, &quot;price_sd&quot;), ~ paste0(.side, &quot;_&quot;, .)) %&gt;% 
+    mutate(doc_id = doc_id)
+}
+
+before &lt;- purrr::pmap_dfr(relevant_facts, dplyr_summarise_facts, .side = &quot;before&quot;)
+
+after &lt;- purrr::pmap_dfr(relevant_facts, dplyr_summarise_facts, .side = &quot;after&quot;)</code></pre>
+<p>However, this function is inefficient: about two hours to run a month of relevant facts. The main bottleneck is that the <code>filter()</code> function is called one time for each instrument symbol related to a relevant fact, making copies in the process, to then compute the summary quantities with <code>summarise()</code>.</p>
+<p>The <code>data.table</code> package offers a scalable alternative for this case<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> as it is possible to perform non-equi join operations. Using this alternative, each month is processed in about 3 minutes!</p>
+<pre class="r"><code># library(data.table)
+
+dt_summarise_fatos &lt;- function(.facts, .side) {
+  .side &lt;- match.arg(.side, c(&quot;before&quot;, &quot;after&quot;))
+  
+  setDT(.facts)
+  setDT(bdi_raw)
+  
+  if (.side == &quot;before&quot;) {
+    df &lt;- bdi_raw[.facts,
+                  on = .(trade_dttm &gt;= dttm_before, 
+                         trade_dttm &lt;= issue_dttm, 
+                         root_instrument = root_instr),
+                  .(doc_id, 
+                    root_instr,
+                    dttm_before, 
+                    issue_dttm, 
+                    trade_dttm,  
+                    instrument_symbol, 
+                    root_instrument,
+                    traded_quantity, 
+                    trade_price)]
+  } else {
+    df &lt;- bdi_raw[.facts,
+                  on = .(trade_dttm &gt;= issue_dttm, 
+                         trade_dttm &lt;= dttm_after, 
+                         root_instrument = root_instr),
+                  .(doc_id, 
+                    root_instr,
+                    dttm_before, 
+                    issue_dttm, 
+                    trade_dttm,  
+                    instrument_symbol, 
+                    root_instrument,
+                    traded_quantity, 
+                    trade_price)]
+  }
+  
+  df &lt;- df[, 
+           list(n = .N,
+                price_mean = mean(trade_price),
+                price_sd = sd(trade_price)),
+           by = list(doc_id, instrument_symbol)]
+  
+  df %&gt;% 
+    as_tibble() %&gt;% 
+    rename_at(c(&quot;n&quot;, &quot;price_mean&quot;, &quot;price_sd&quot;), ~ paste0(.side, &quot;_&quot;, .)) %&gt;% 
+    filter(!is.na(instrument_symbol))
+}
+
+before &lt;- dt_summarise_fatos(relevant_facts, &quot;before&quot;)
+
+after &lt;- dt_summarise_fatos(relevant_facts, &quot;after&quot;)
+
+relevant_facts &lt;- relevant_facts %&gt;%
+  left_join(before, by = &quot;doc_id&quot;) %&gt;% 
+  left_join(after, by = c(&quot;doc_id&quot;, &quot;instrument_symbol&quot;)) %&gt;% 
+  as_tibble()</code></pre>
+<p>Finally, we can compute the response variable <code>response_price</code>. We are disregarding the relevant facts where it was not possible to calculate the standard deviation (<em>i.e.</em> when <code>response_price</code> is <code>NA</code>).</p>
+<pre class="r"><code>price_alerts &lt;- relevant_facts %&gt;% 
+  mutate(response_price = 
+           abs(after_price_mean - before_price_mean) &gt; n_sd * before_price_sd) %&gt;%
+  filter(!is.na(response_price)) %&gt;% 
+  mutate(instrument_symbol = if_else(response_price, instrument_symbol, &quot;&quot;)) %&gt;% 
+  group_by(file_name) %&gt;% 
+  summarise(response_price = sum(response_price) &gt; 0,
+            ativo_response = instrument_symbol %&gt;% 
+              str_c(collapse = &quot; &quot;) %&gt;% 
+              str_squish() %&gt;% 
+              na_if(&quot;&quot;))
+
+fatos_final &lt;- relevant_facts %&gt;% 
+  left_join(price_alerts, by = &quot;file_name&quot;) %&gt;% 
+  filter(!is.na(response_price))</code></pre>
+<p><br />
+</p>
+</div>
+</div>
+<div id="download-and-read-pdfs" class="section level2">
+<h2><span class="header-section-number">1.5</span> Download and read PDFs</h2>
+<p>The last step to complete the data needed for the model is to get the documents emited for each relevant fact. Analyzing the source-code of <a href="https://www.rad.cvm.gov.br/ENET/frmConsultaExternaCVM.aspx">CVM’s relevant facts page</a>, it was possible to find the link for each attached document. The link parameters are given by the arguments of the function <code>OpenDownloadDocumentos()</code> of the page, that was converted into a character vector in the column <code>relevant_facts$download</code> (see Subsection 1.1).</p>
+<p>In the code below, the function <code>download_attachment()</code> downloads only PDF files, as some attachments are images or XML files of varying structure. If an file extension is not <strong>.pdf</strong>, the function returns <code>"NONE"</code>. If an error in downloading occurs (for connection problems, for example), it returns <code>"ERROR"</code>, then we can try to download again until there are no more files with error. At the end, <strong>relevant facts where it was not possible to download a PDF attachment are disregarded</strong>.</p>
+<pre class="r"><code># library(httr)
+
+download_attachment &lt;- function(download_params, dest_dir, n_attempt = 5L) {
+  # Downloads the attached PDF files from a relevant fact record
+  #
+  # Arguments:
+  # `download_params`   Parameters of download link, as a string vector
+  # `dest_dir`          Directory path to save file
+  # `n_attempt`         Max number of download attempts
+  
+  url &lt;- str_glue(
+    &quot;https://www.rad.cvm.gov.br/ENET/frmDownloadDocumento.aspx?Tela=ext&quot;,
+    &quot;&amp;numSequencia={download_params[1]}&quot;,
+    &quot;&amp;numVersao={download_params[2]}&quot;,
+    &quot;&amp;numProtocolo={download_params[3]}&quot;,
+    &quot;&amp;descTipo={download_params[4]}&quot;,
+    &quot;&amp;CodigoInstituicao=1&quot;)
+  
+  try(
+    extension &lt;- httr::HEAD(url)$headers$`content-disposition` %&gt;% 
+        str_extract(&quot;(?&lt;=filename=).*&quot;) %&gt;% 
+        tools::file_ext()
+  )
+  
+  if (!exists(&quot;extension&quot;)) return(&quot;ERROR&quot;)
+  
+  if (!is.na(extension) &amp; extension == &quot;pdf&quot;) {
+    file_name &lt;- paste(download_params, collapse = &quot;-&quot;)
+    
+    attempt &lt;- 0L
+
+    while (!exists(&quot;dl&quot;) &amp; attempt &lt; n_attempt) {
+      try(
+        dl &lt;- download.file(url, str_glue(&quot;{dest_dir}/{file_name}.pdf&quot;), mode = &quot;wb&quot;)
+      )
+
+      attempt &lt;- attempt + 1L
+
+      Sys.sleep(0.2)
+    }
+
+    if(attempt == n_attempt) file_name &lt;- &quot;ERROR&quot;
+    
+  } else file_name &lt;- &quot;NONE&quot;
+  
+  file_name
+}
+
+dest_path &lt;- &quot;attachments&quot;
+
+relevant_facts$file_name &lt;-  purrr::map_chr(
+  relevant_facts$download,  ~ download_attachment(., dest_dir = dest_path)
+  )
+
+# If &quot;ERROR&quot; returned, try to download again
+while (sum(relevant_facts$file_name == &quot;ERROR&quot;) != 0) {
+  file_names &lt;- relevant_facts %&gt;% 
+    filter(file_name == &quot;ERROR&quot;) %&gt;% 
+    pull(download) %&gt;% 
+    purrr::map_chr(~ download_attachment(., dest_dir = dest_path))
+  
+  relevant_facts[relevant_facts$file_name == &quot;ERROR&quot;, &quot;file_name&quot;] &lt;- file_names
+}
+
+# Clean `file_name` and remove relevant facts with no attached PDF file
+relevant_facts &lt;- relevant_facts %&gt;% 
+  mutate(file_name = if_else(file_name == &quot;NONE&quot;, NA_character_, file_name)) %&gt;% 
+  select(-download) %&gt;% 
+  filter(!is.na(file_name))</code></pre>
+<p>Now, we read the contents (all pages) of the PDF files using the <a href="https://cran.r-project.org/web/packages/pdftools/index.html">pdftools</a> package. Some files may be corrupted or with an incompatible structure with <code>pdftools::pdf_text()</code>. Thus, <strong>relevant facts where it was not possible to read the PDF or with empty content are also disregarded</strong>.</p>
+<pre class="r"><code># library(pdftools)
+
+read_pdf &lt;- function(pdf_name, dir_path) {
+  try({
+    text &lt;- str_glue(&quot;{dir_path}/{pdf_name}.pdf&quot;) %&gt;% 
+      pdftools::pdf_text() %&gt;% 
+      paste(collapse = &quot; &quot;)
+  })
+  
+  if (exists(&quot;text&quot;, mode = &quot;character&quot;)) text else &quot;ERROR&quot;
+}
+
+relevant_facts$pdf_content &lt;- relevant_facts$file_name %&gt;% 
+  purrr::map_chr(read_pdf, dir_path = dest_path) %&gt;% 
+  str_trim() %&gt;% 
+  na_if(&quot;ERROR&quot;)
+
+relevant_facts &lt;- filter(relevant_facts, !is.na(pdf_content))</code></pre>
+<p><br />
+</p>
+</div>
+</div>
+<div id="modeling" class="section level1">
+<h1><span class="header-section-number">2</span> Modeling</h1>
+<p>Completed the data structuring, we finally enter the stage of model building. Remember that of all relevant facts published by CVM we are dealing with only a subset due to some difficulties on the processing. Relevant facts are excluded if:</p>
+<ul>
+<li><p>The company does not have an instrument symbol listed in B3;</p></li>
+<li><p>It is not possible to compute the response variable <code>response_price</code> due to low trades within the period;</p></li>
+<li><p>They do not have a PDF file attached;</p></li>
+<li><p>It was not possible to read the PDF file or its content is empty</p></li>
+</ul>
+<blockquote>
+<p>The full data structuring process was done for three months. So, from now on, the dataframe <code>relevant_facts</code> used to build the model includes the months of <strong>August, September and Octuber 2019</strong>.</p>
+</blockquote>
+<p><br />
+</p>
+<div id="nlp-model" class="section level2">
+<h2><span class="header-section-number">2.1</span> NLP Model</h2>
+<p>Each text <code>relevant_facts$pdf_content</code> is pre-processed to eliminate words or expressions that do not add significant results to the NLP model, like common words (<em>stop words</em>), digits or web links. As the documents may contain both text in Portugues and English, the pre-processing tries to account for cleaning in both languages. The operations performed, in the same order as the following code, are:</p>
+<ol style="list-style-type: decimal">
+<li>Convert words to lower case</li>
+<li>Remove accents</li>
+<li>Remove website links and e-mail addresses</li>
+<li>Remove punctuation and numbers</li>
+<li>Remove common special characters (ª, º, |)</li>
+<li>Remove stop words
+<ul>
+<li>List of stop words in Portuguese (muito, sua, foi, …) and English (the, my, how, …)</li>
+<li>Months both abbreviated and non-abbreviated (Portuguese and English)</li>
+<li>Roman numerals (III, LVII) and quantifiers (million, billion)</li>
+<li>Specific context words</li>
+</ul></li>
+<li>Remove words up to two letters or with more than 20 letters</li>
+</ol>
+<pre class="r"><code># library(tm)
+
+read_pdf &lt;- function(x) {
+  try ({
+    text &lt;- paste0(&quot;attachments/&quot;, ano_mes, &quot;/&quot;, x, &quot;.pdf&quot;) %&gt;% 
+      pdftools::pdf_text() %&gt;% 
+      paste(collapse = &quot; &quot;)
+  })
+  
+  if (exists(&quot;text&quot;, mode = &quot;character&quot;)) text else &quot;&quot;
+}
+
+relevant_facts$pdf_content &lt;- purrr::map_chr(relevant_facts$file_name, read_pdf)
+
+stop_words &lt;- c(stringi::stri_trans_general(stopwords(&quot;pt-BR&quot;), &quot;Latin-ASCII&quot;),
+                stringi::stri_trans_general(stopwords(&quot;en&quot;), &quot;Latin-ASCII&quot;),
+                format(ISOdate(2019, 1:12, 1), &quot;%B&quot;), month.name,
+                format(ISOdate(2019, 1:12, 1), &quot;%b&quot;), month.abb,
+                &quot;sao&quot;, &quot;paulo&quot;, &quot;rio&quot;, &quot;brasil&quot;, &quot;brazil&quot;,
+                &quot;cpf&quot;, &quot;cnpj&quot;, &quot;cnpjmf&quot;, &quot;nire&quot;, &quot;sobre&quot;, &quot;ser&quot;,
+                as.roman(1:1000), 
+                &quot;bilhao&quot;, &quot;bilhoes&quot;, &quot;milhao&quot;, &quot;milhoes&quot;, 
+                &quot;mil&quot;, &quot;milhares&quot;, &quot;centena&quot;, &quot;centenas&quot;,
+                &quot;billion&quot;, &quot;billions&quot;, &quot;million&quot;, &quot;millions&quot;, 
+                &quot;thousand&quot;, &quot;thousands&quot;, &quot;hundred&quot;, &quot;hundreds&quot;) %&gt;% 
+  str_to_lower()
+
+relevant_facts &lt;- relevant_facts %&gt;% 
+  mutate(pdf_content = pdf_content %&gt;% 
+           str_to_lower(locale = &quot;pt-BR&quot;) %&gt;%
+           stringi::stri_trans_general(&quot;Latin-ASCII&quot;) %&gt;% 
+           str_remove_all(&quot;(https?:\\/\\/|www\\.)\\S*\\s?&quot;) %&gt;% # Removes website address
+           str_remove_all(&quot;\\S*@\\S*\\s?&quot;) %&gt;% # Removes e-mail address
+           removePunctuation() %&gt;%
+           removeNumbers() %&gt;%
+           str_replace_all(&quot;ª|º|\\|&quot;, &quot; &quot;) %&gt;% 
+           removeWords(stop_words) %&gt;%
+           str_remove_all(&quot;\\b\\w{1,2}\\b&quot;) %&gt;%
+           str_remove_all(&quot;\\b\\w{20,}\\b&quot;) %&gt;% 
+           str_remove_all(&quot;[^[\\w\\s]]&quot;) %&gt;% 
+           str_squish() %&gt;% 
+           na_if(&quot;&quot;))</code></pre>
+<p>Then, the <em>corpus</em>, the set of words in the text documents, is generated and from the <code>corpus</code>, the <strong>d</strong>ocument-<strong>t</strong>erm <strong>m</strong>atrix is created, where each line of the matrix represents a document and each collumn is a words of the corpus.</p>
+<pre class="r"><code>corpus &lt;- relevant_facts %&gt;%
+  select(doc_id = file_name, text = pdf_content, 
+         cvm_code, company, category, issue_dttm) %&gt;% 
+  DataframeSource() %&gt;% 
+  VCorpus()</code></pre>
+<p><br />
+</p>
+</div>
+<div id="bag-of-words" class="section level2">
+<h2><span class="header-section-number">2.2</span> Bag-of-words</h2>
+<p><em>Bag-of-words</em> (BoW) is a simplified model in NLP, because it does not consider the structure or order in which words appear in the text. Each word in the corpus is a column in the document-term matrix, where the matrix value <span class="math inline">\([a_{ij}]\)</span> indicates how many times the word <span class="math inline">\(j\)</span> appears in document <span class="math inline">\(i\)</span>.</p>
+<pre class="r"><code>bow_dtm &lt;- corpus %&gt;% 
+  DocumentTermMatrix() %&gt;% 
+  removeSparseTerms(.99) %&gt;% 
+  as.matrix()
+
+bow_dtm[1:5, 1:5]</code></pre>
+<pre><code>##                      Terms
+## Docs                  aaa abaixo abastecimento abc aberta
+##   228948-1-703056-IPE   0      0             0   0      0
+##   229036-1-703146-IPE   0      1             0   0      0
+##   229044-1-703155-IPE   0      9             1   0      0
+##   228950-1-703058-IPE   0      1             0   0      1
+##   229116-1-703227-IPE   0      0             0   0      1</code></pre>
+<p>The matrix lines have index <code>doc_id</code>, an unique value (in this case, the name of the PDF file, <code>relevant_facts$file_name</code>) that identifies the document, and the matrix columns are words of the corpus. In the last function <code>removeSparseTerms()</code>, we remove words that appear very rarely in document set, that is, where column values are 99% or more zeroes. This helps to lower the dimensionality of the matrix <code>bow_dtm</code> by removing terms that do not add much meaning to the model – from ~97.000 words to ~8.000!).</p>
+<p><br />
+</p>
+</div>
+<div id="tf-idf" class="section level2">
+<h2><span class="header-section-number">2.3</span> Tf-idf</h2>
+<p>The <strong>tf-idf</strong> measures the importance of a word in a document from a collection of documents and is define as:</p>
+<p><span class="math display">\[\text{tfidf}(t, d, D) = \text{tf}(t, d) \cdot \text{idf}(t, D)\]</span> where</p>
+<ul>
+<li><p><span class="math inline">\(\text{tf}(t, d)\)</span>, <em>term frequency</em>, is the number of occurences of the term <span class="math inline">\(t\)</span> in document <span class="math inline">\(d\)</span></p></li>
+<li><p><span class="math inline">\(\text{idf}(t, D) = \log_2 \frac{|D|}{|\{d \in D:\ t \in d\}|}\)</span>, <em>inverse document frequency</em>, is a measure of how much information a word provides, i.e., if a term is common or rare in relation to all documents. <span class="math inline">\(|D|\)</span> denotes the total number of documents and <span class="math inline">\(|\{d \in D:\ t \in d\}|\)</span> is the number of documents where term <span class="math inline">\(t\)</span> appears.</p></li>
+</ul>
+<p>If a term (word) <span class="math inline">\(t_j\)</span> appears in a document <span class="math inline">\(d_i\)</span>, the element <span class="math inline">\([a_{ij}]\)</span> of matrix <code>pdf_dtm</code> has value given by tf-idf, instead of simply the number of times a word appears in each document like in the bag-of-words model. In the same way, we remove sparse terms.</p>
+<pre class="r"><code>tfidf_dtm &lt;- corpus %&gt;% 
+  DocumentTermMatrix(control = list(weighting = weightTfIdf)) %&gt;% 
+  removeSparseTerms(.99) %&gt;% 
+  as.matrix()
+
+tfidf_dtm[1:5, 1:5]</code></pre>
+<pre><code>##                      Terms
+## Docs                  aaa       abaixo abastecimento abc      aberta
+##   228948-1-703056-IPE   0 0.0000000000  0.0000000000   0 0.000000000
+##   229036-1-703146-IPE   0 0.0009098652  0.0000000000   0 0.000000000
+##   229044-1-703155-IPE   0 0.0022252353  0.0007090985   0 0.000000000
+##   228950-1-703058-IPE   0 0.0143542375  0.0000000000   0 0.009277092
+##   229116-1-703227-IPE   0 0.0000000000  0.0000000000   0 0.006347484</code></pre>
+<p><br />
+</p>
+</div>
+<div id="logistic-regression-model" class="section level2">
+<h2><span class="header-section-number">2.4</span> Logistic regression model</h2>
+<p>To better evaluate the performance of the model, both for bag-of-words and tf-idf, we separate the matrix data in two sets:</p>
+<ul>
+<li><p><strong>Training set</strong> with 75% of the data, used to train the model; and</p></li>
+<li><p><strong>Test set</strong> with the other 25% of the data, used to evaluate the results with data not seen by the model previously.</p></li>
+</ul>
+<pre class="r"><code># library(caret)
+
+set.seed(123) # For reproducibility
+
+train_idx &lt;- createDataPartition(relevant_facts$response_price, 
+                                 p = .75, list = FALSE)
+
+# Bag-of-words
+train_bow &lt;- as.matrix(bow_dtm)[train_idx, ]
+
+test_bow &lt;- as.matrix(bow_dtm)[-train_idx, ]
+
+# tf-idf
+train_tfidf &lt;- as.matrix(tfidf_dtm)[train_idx, ]
+
+test_tfidf &lt;- as.matrix(tfidf_dtm)[-train_idx, ]</code></pre>
+<p>We train a logistic regression model with <em>elastic net</em> regularization. This regularization method tries to minimize the residual sum of squares plus a penalty term, that is a linear combination of the Lasso (<span class="math inline">\(L_1\)</span>) and Ridge (<span class="math inline">\(L_2\)</span>) regularizations, that is,</p>
+<p><span class="math display">\[\min_\beta \sum^n_{i=1} \left(y_i - \beta_0 - \sum^p_{j=1} \beta_j x_{ij} \right)^2 + \lambda \left[\alpha ||\beta||_1 + \frac{1 - \alpha}{2} ||\beta||^2_2 \right]\]</span> where</p>
+<ul>
+<li><p><span class="math inline">\(||\beta||^2_2 = \sqrt{\sum^p_{j=1} \beta^2_j}\)</span>, and</p></li>
+<li><p><span class="math inline">\(||\beta||_1 = \sum^p_{j=1} |\beta_j|\)</span>.</p></li>
+</ul>
+<p>To determine the optimal values of the hyperparameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\lambda\)</span>, we apply the <em>k</em>-fold cross-validation method with <span class="math inline">\(k = 5\)</span>, using the ROC value as the evaluation metric.</p>
+<pre class="r"><code>control &lt;- trainControl(method = &quot;cv&quot;, 
+                        number = 5,
+                        classProbs = TRUE,
+                        savePredictions = &quot;final&quot;,
+                        summaryFunction = twoClassSummary)
+
+set.seed(2019)
+
+bow_model &lt;- train(x = train_bow,
+                   y = relevant_facts$response_price[train_idx],
+                   method = &quot;glmnet&quot;,
+                   family = &quot;binomial&quot;,
+                   metric = &quot;ROC&quot;,
+                   trControl = control)
+
+tfidf_model &lt;- train(x = train_tfidf,
+                     y = relevant_facts$response_price[train_idx],
+                     method = &quot;glmnet&quot;,
+                     family = &quot;binomial&quot;,
+                     metric = &quot;ROC&quot;,
+                     trControl = control)</code></pre>
+<p>In the plot below, we can visualize the comparision between the bag-of-words and tf-idf models. The tf-idf model has a slightly better performance but this difference is statistically insignificant. Nevertheless, we will use the tf-idf model as it has lower dimensionality.</p>
+<p><br />
+</p>
+<pre class="r"><code>resamps &lt;- resamples(list(BoW = bow_model, Tf_Idf = tfidf_model))
+
+dotplot(resamps)</code></pre>
+<div class="figure" style="text-align: center">
+<img src="relevant-facts_files/figure-html/bowTfidf-1.png" alt="Comparação dos modelos bag-of-words (BoW) e Tf-Idf." width="672" />
+<p class="caption">
+Comparação dos modelos bag-of-words (BoW) e Tf-Idf.
+</p>
+</div>
+<p><br />
+</p>
+<p>The values of the area under the ROC curve (AUC) of the <strong>test set</strong> are:</p>
+<pre class="r"><code>roc_bow &lt;- pROC::roc(
+  predictor = predict(bow_model, test_bow, type = &quot;prob&quot;)$TRUE.,
+  response = relevant_facts$response_price[-train_idx]
+  )
+
+roc_tfidf &lt;- pROC::roc(
+  predictor = predict(tfidf_model, test_tfidf, type = &quot;prob&quot;)$TRUE.,
+  response = relevant_facts$response_price[-train_idx]
+  )</code></pre>
+<pre><code>## AUC bag-of-words model: 0.606760672417607
+## AUC tf-idf model: 0.613092236230922</code></pre>
+<p><br />
+</p>
+</div>
+<div id="homogeneous-groups" class="section level2">
+<h2><span class="header-section-number">2.5</span> Homogeneous groups</h2>
+<p>The obtained ROC value seems to be only reasonable for a model built from <em>many sources of real data</em>, but it still represents an useful model. A way to condense the volume of information and give priorities of alerts to Compliance analysts is to sort the model results in <em>homogeneous groups</em> (HG), a technique usually used in <em>Credit Scoring</em> analysis to identify higher risk groups.</p>
+<p>To separate the predictions into groups, we use the probabilities given by the model and sort the probability distribuition into 20 quantiles. Each quantile contains 5% of the values set. For each group, we count the number of “good” and “bad” events – in this case, the number of <code>TRUE</code> and <code>FALSE</code> of the response variable, respectively. From this score we can compute the <em>odds</em>, given by:</p>
+<p><span class="math display">\[\text{Odds} =  \frac{\text{% of good}}{\text{% of bad}}\]</span></p>
+<p>Sometimes, the weight of evidence (WoE), a logit transformation of odds (that is, <span class="math inline">\(\text{WoE} = \ln (\text{Odds})\)</span>), is also computed. We observe WoE values along the 20 homogeneous groups and perform aggregations following two rules:</p>
+<ol style="list-style-type: decimal">
+<li><p>Join <em>adjacent</em> groups with similar WoE values; and</p></li>
+<li><p>The WoE values of the new groups must be monotonically increasing or decreasing</p></li>
+</ol>
+<p>This way, we classify the observations into “risk” groups, i.e., with lower or higher probability for an event.</p>
+<pre class="r"><code>train_hg &lt;- relevant_facts %&gt;% 
+  slice(train_idx) %&gt;% 
+  select(-pdf_content) %&gt;% 
+  mutate(prob = tfidf_model$pred %&gt;% arrange(rowIndex) %&gt;% pull(TRUE.),
+         response_price = response_price == &quot;TRUE.&quot;)
+
+test_hg &lt;- relevant_facts %&gt;% 
+  slice(-train_idx) %&gt;% 
+  select(-pdf_content) %&gt;% 
+  mutate(prob = predict(tfidf_model, test_tfidf, type = &quot;prob&quot;)$TRUE.,
+         response_price = response_price == &quot;TRUE.&quot;)</code></pre>
+<p>The <code>hg_quantiles()</code> function computes the 20-quantiles interval of a given vector, while the <code>hg_summary_tbl()</code> function returns a table of the good and bad counts and WoE values.</p>
+<pre class="r"><code>hg_quantiles &lt;- function(training, col, join = list()) {
+  # Computes the 20-quantiles (5%) intervals of a vector of probabilities. It
+  # is possible to join quantiles with the `join` argument.
+  #
+  # Arguments:
+  # `prob`  numeric vector of probabilities
+  
+  # `join`  list of integer sequences. For example list(2:5, 8:12) to join 
+  #         homogeneous groups `hg` 2 to 5 and 8 to 12
+  
+  quantiles &lt;- training[[col]] %&gt;%
+    quantile(seq(0, 1, 0.05)) %&gt;%
+    unique()
+  
+  if(length(join) != 0) {
+    join &lt;- join %&gt;%
+      purrr::map(~ .[-1]) %&gt;%
+      unlist()
+    
+    quantiles &lt;- quantiles[-join]
+  }
+  
+  quantiles[1] &lt;- -Inf
+  quantiles[length(quantiles)] &lt;- Inf
+  
+  quantiles
+}
+
+
+hg_summary_tbl &lt;- function(df, col, target, quantiles = hg_quantiles(df, col)) {
+  # Returns information as a tibble about homogeneous groups in relation to the
+  # values of a variable (numeric or categoric)
+  # 
+  # Arguments:
+  # `df`          model dataframe
+  # `col`         name of a variable (numeric, character ou factor) as a string
+  #               of the separation group
+  # `target`      name of the binary (TRUE/FALSE) response variable as a string
+  # `quantiles`   quantile intervals computed by `hg_quantiles()`
+  
+  target_sym &lt;- rlang::sym(target)
+
+  if(is.numeric(df[[col]])) {
+    
+    for(i in 1:(length(quantiles) - 1)) {
+      idx &lt;- df[, col] &gt;= quantiles[i] &amp; df[, col] &lt; quantiles[i + 1]
+      
+      df[idx, &quot;hg&quot;] &lt;- i
+      
+      df[idx, &quot;interval&quot;] &lt;- paste0(&quot;[&quot;, quantiles[i], 
+                                    &quot;, &quot;, quantiles[i + 1], &quot;[&quot;)
+    }
+    
+    df &lt;- df %&gt;%
+      mutate(hg = factor(hg)) %&gt;%
+      group_by(hg, interval, add = TRUE) %&gt;%
+      summarise(mean_value = mean(!!rlang::sym(col)),
+                n_good = sum(!!target_sym),
+                n_bad = sum(!(!!target_sym)))
+  } else if (is.factor(df[[col]]) | is.character(df[[col]])){
+    df &lt;- df %&gt;%
+      group_by(!!rlang::sym(col), add = TRUE) %&gt;%
+      summarise(n_good = sum(!!target_sym),
+                n_bad = sum(!(!!target_sym)))
+  } else stop(&quot;`col` must be a factor, character or numeric column&quot;)
+  
+  
+  df %&gt;%
+    ungroup() %&gt;%
+    mutate(percent_good = n_good / sum(n_good),
+           percent_bad = n_bad / sum(n_bad),
+           freq = (n_good + n_bad) / sum(n_good + n_bad),
+           mean_good = n_good / (n_good + n_bad),
+           odds = percent_good / percent_bad,
+           woe = log(odds),
+           iv = log(percent_good / percent_bad) * (percent_good - percent_bad),
+           ks = abs(cumsum(percent_good) - cumsum(percent_bad)))
+}</code></pre>
+<pre class="r"><code>hg20 &lt;- hg_summary_tbl(train_hg, &quot;prob&quot;, &quot;response_price&quot;) %&gt;% 
+  select(hg, n_good, n_bad, percent_good, percent_bad, mean_good, odds, woe)</code></pre>
+<p><br />
+</p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+HG
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+# TRUE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+# FALSE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+% TRUE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+% FALSE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Mean TRUE
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+Odds
+</th>
+<th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;">
+WoE
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.361
+</td>
+<td style="text-align:right;">
+0.587
+</td>
+<td style="text-align:right;">
+-0.533
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+73
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.361
+</td>
+<td style="text-align:right;">
+0.587
+</td>
+<td style="text-align:right;">
+-0.533
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+139
+</td>
+<td style="text-align:right;">
+0.032
+</td>
+<td style="text-align:right;">
+0.068
+</td>
+<td style="text-align:right;">
+0.312
+</td>
+<td style="text-align:right;">
+0.470
+</td>
+<td style="text-align:right;">
+-0.755
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+0.042
+</td>
+<td style="text-align:right;">
+0.058
+</td>
+<td style="text-align:right;">
+0.411
+</td>
+<td style="text-align:right;">
+0.724
+</td>
+<td style="text-align:right;">
+-0.324
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+79
+</td>
+<td style="text-align:right;">
+119
+</td>
+<td style="text-align:right;">
+0.040
+</td>
+<td style="text-align:right;">
+0.058
+</td>
+<td style="text-align:right;">
+0.399
+</td>
+<td style="text-align:right;">
+0.689
+</td>
+<td style="text-align:right;">
+-0.373
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+6
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+135
+</td>
+<td style="text-align:right;">
+0.034
+</td>
+<td style="text-align:right;">
+0.066
+</td>
+<td style="text-align:right;">
+0.332
+</td>
+<td style="text-align:right;">
+0.515
+</td>
+<td style="text-align:right;">
+-0.664
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+7
+</td>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:right;">
+129
+</td>
+<td style="text-align:right;">
+0.039
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.374
+</td>
+<td style="text-align:right;">
+0.619
+</td>
+<td style="text-align:right;">
+-0.479
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+8
+</td>
+<td style="text-align:right;">
+85
+</td>
+<td style="text-align:right;">
+117
+</td>
+<td style="text-align:right;">
+0.043
+</td>
+<td style="text-align:right;">
+0.057
+</td>
+<td style="text-align:right;">
+0.421
+</td>
+<td style="text-align:right;">
+0.754
+</td>
+<td style="text-align:right;">
+-0.283
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+9
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.490
+</td>
+<td style="text-align:right;">
+0.997
+</td>
+<td style="text-align:right;">
+-0.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+10
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+112
+</td>
+<td style="text-align:right;">
+0.045
+</td>
+<td style="text-align:right;">
+0.054
+</td>
+<td style="text-align:right;">
+0.446
+</td>
+<td style="text-align:right;">
+0.834
+</td>
+<td style="text-align:right;">
+-0.182
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+11
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+103
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.490
+</td>
+<td style="text-align:right;">
+0.997
+</td>
+<td style="text-align:right;">
+-0.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+12
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+102
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.050
+</td>
+<td style="text-align:right;">
+0.495
+</td>
+<td style="text-align:right;">
+1.017
+</td>
+<td style="text-align:right;">
+0.017
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+13
+</td>
+<td style="text-align:right;">
+112
+</td>
+<td style="text-align:right;">
+90
+</td>
+<td style="text-align:right;">
+0.056
+</td>
+<td style="text-align:right;">
+0.044
+</td>
+<td style="text-align:right;">
+0.554
+</td>
+<td style="text-align:right;">
+1.291
+</td>
+<td style="text-align:right;">
+0.255
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+14
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+88
+</td>
+<td style="text-align:right;">
+0.057
+</td>
+<td style="text-align:right;">
+0.043
+</td>
+<td style="text-align:right;">
+0.564
+</td>
+<td style="text-align:right;">
+1.344
+</td>
+<td style="text-align:right;">
+0.295
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+15
+</td>
+<td style="text-align:right;">
+125
+</td>
+<td style="text-align:right;">
+77
+</td>
+<td style="text-align:right;">
+0.063
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.619
+</td>
+<td style="text-align:right;">
+1.684
+</td>
+<td style="text-align:right;">
+0.521
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+16
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+82
+</td>
+<td style="text-align:right;">
+0.061
+</td>
+<td style="text-align:right;">
+0.040
+</td>
+<td style="text-align:right;">
+0.594
+</td>
+<td style="text-align:right;">
+1.518
+</td>
+<td style="text-align:right;">
+0.417
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+17
+</td>
+<td style="text-align:right;">
+120
+</td>
+<td style="text-align:right;">
+82
+</td>
+<td style="text-align:right;">
+0.061
+</td>
+<td style="text-align:right;">
+0.040
+</td>
+<td style="text-align:right;">
+0.594
+</td>
+<td style="text-align:right;">
+1.518
+</td>
+<td style="text-align:right;">
+0.417
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+18
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+76
+</td>
+<td style="text-align:right;">
+0.064
+</td>
+<td style="text-align:right;">
+0.037
+</td>
+<td style="text-align:right;">
+0.624
+</td>
+<td style="text-align:right;">
+1.720
+</td>
+<td style="text-align:right;">
+0.542
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+19
+</td>
+<td style="text-align:right;">
+143
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:right;">
+0.072
+</td>
+<td style="text-align:right;">
+0.029
+</td>
+<td style="text-align:right;">
+0.708
+</td>
+<td style="text-align:right;">
+2.514
+</td>
+<td style="text-align:right;">
+0.922
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+20
+</td>
+<td style="text-align:right;">
+135
+</td>
+<td style="text-align:right;">
+67
+</td>
+<td style="text-align:right;">
+0.068
+</td>
+<td style="text-align:right;">
+0.033
+</td>
+<td style="text-align:right;">
+0.668
+</td>
+<td style="text-align:right;">
+2.090
+</td>
+<td style="text-align:right;">
+0.737
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+</p>
+<pre class="r"><code>quantiles &lt;- hg_quantiles(train_hg, &quot;prob&quot;, 
+                          join = list(1:8, 9:12, 13:14, 15:18, 19:20))
+
+hg5 &lt;- train_hg %&gt;% 
+  hg_summary_tbl(&quot;prob&quot;, &quot;response_price&quot;, quantiles) %&gt;% 
+  select(hg, n_good, n_bad, percent_good, percent_bad, mean_good, odds, woe)</code></pre>
+<p><br />
+</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+HG
+</th>
+<th style="text-align:right;">
+# TRUE
+</th>
+<th style="text-align:right;">
+# FALSE
+</th>
+<th style="text-align:right;">
+% TRUE
+</th>
+<th style="text-align:right;">
+% FALSE
+</th>
+<th style="text-align:right;">
+Mean TRUE
+</th>
+<th style="text-align:right;">
+Odds
+</th>
+<th style="text-align:right;">
+WoE
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:right;">
+600
+</td>
+<td style="text-align:right;">
+1016
+</td>
+<td style="text-align:right;">
+0.303
+</td>
+<td style="text-align:right;">
+0.494
+</td>
+<td style="text-align:right;">
+0.371
+</td>
+<td style="text-align:right;">
+0.613
+</td>
+<td style="text-align:right;">
+-0.490
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:right;">
+388
+</td>
+<td style="text-align:right;">
+420
+</td>
+<td style="text-align:right;">
+0.196
+</td>
+<td style="text-align:right;">
+0.204
+</td>
+<td style="text-align:right;">
+0.480
+</td>
+<td style="text-align:right;">
+0.958
+</td>
+<td style="text-align:right;">
+-0.043
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:right;">
+226
+</td>
+<td style="text-align:right;">
+178
+</td>
+<td style="text-align:right;">
+0.114
+</td>
+<td style="text-align:right;">
+0.087
+</td>
+<td style="text-align:right;">
+0.559
+</td>
+<td style="text-align:right;">
+1.317
+</td>
+<td style="text-align:right;">
+0.275
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+4
+</td>
+<td style="text-align:right;">
+491
+</td>
+<td style="text-align:right;">
+317
+</td>
+<td style="text-align:right;">
+0.248
+</td>
+<td style="text-align:right;">
+0.154
+</td>
+<td style="text-align:right;">
+0.608
+</td>
+<td style="text-align:right;">
+1.607
+</td>
+<td style="text-align:right;">
+0.474
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+5
+</td>
+<td style="text-align:right;">
+278
+</td>
+<td style="text-align:right;">
+126
+</td>
+<td style="text-align:right;">
+0.140
+</td>
+<td style="text-align:right;">
+0.061
+</td>
+<td style="text-align:right;">
+0.688
+</td>
+<td style="text-align:right;">
+2.289
+</td>
+<td style="text-align:right;">
+0.828
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>We can identify the group to which an observation belongs by the interval given by <code>gh_quantiles()</code> and the probability given by the model.</p>
+<pre class="r"><code>train_hg %&gt;%
+  bind_rows(test_hg) %&gt;% 
+  mutate(hg = findInterval(prob, quantiles))</code></pre>
+<p>The plot below shows the mean of the response variable along three monts for 5 homogenous groups (training + test sets). If there are crossing lines between groups, we need to review the grouping choices or lower the number of groups. Moreover, it is important that the mean keep an approximately constant behaviour through time for the model to be applied. If this does not happens, there was a change in the observations’ pattern.</p>
+<p><br />
+</p>
+<div class="figure" style="text-align: center">
+<img src="relevant-facts_files/figure-html/mediaTarget-1.png" alt="Response variable mean along months. The frequency percentages of each group are also shown." width="80%" />
+<p class="caption">
+Response variable mean along months. The frequency percentages of each group are also shown.
+</p>
+</div>
+<p><br />
+</p>
+<p>Note that group 5, with only 10% of train and test data, is the high “risk” group, that is, it has relevant facts with higher probability of price variation after its publication (when the response variable is <code>TRUE</code>).</p>
+<p><br />
+</p>
+</div>
+</div>
+<div id="conclusion" class="section level1">
+<h1><span class="header-section-number">3</span> Conclusion</h1>
+<p>In market regulation context, the results of the project could be crossed with (confidential) information of broker’s clients to analyze deviations from typical trade behaviour. A change in traded volume days or weeks prior to a relevant fact, that causes impacts in shares’ value, could indicate improper use of insider information by clients to obtain advantage in the market. Even so, the analysis of an expert is necessary to give the final veredict about the case.</p>
+<p>Possible improvements of the baseline project include from pre-processing steps to the choosing of the Machine Learning model used, as for example:</p>
+<ul>
+<li><p>Refine the stop words list and apply word <a href="https://en.wikipedia.org/wiki/Stemming">stemming</a> and <a href="https://en.wikipedia.org/wiki/Lemmatisation">lemmatisation</a> to the corpus;</p></li>
+<li><p>Vary parameters <span class="math inline">\(\delta_{before}\)</span>, <span class="math inline">\(\delta_{after}\)</span> and <span class="math inline">\(n_{\sigma}\)</span> of the response variable to better capture its behaviour;</p></li>
+</ul>
+<p>Indeed, I have done tests with (<span class="math inline">\(\delta_{antes}\)</span>, <span class="math inline">\(\delta_{depois}\)</span>, <span class="math inline">\(n_{\sigma}\)</span>) = {(45, 45, 1), (60, 60, 1), (180, 60, 1), (45, 45, 3), (60, 60, 3), (180, 60, 3)} and the last combination got the best relation between the proportion of positive:negative values of the response.</p>
+<ul>
+<li><p>Evaluate new possibilites for the definition of the response variable that best reflect the market impact;</p></li>
+<li><p>Apply more complex NLP models, such as <a href="https://en.wikipedia.org/wiki/Word2vec">Word2vec</a>.</p></li>
+</ul>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Sadly, B3 annouced a few months ago that it will shut down the free FTP server to replace it with a new paid server.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Thanks to <strong>@Fino</strong> for the help in conversion of the <code>dplyr</code> function to <code>data.table</code> in <a href="https://stackoverflow.com/questions/59504357/filtering-and-summarising-a-dataframe-based-another-search-dataframe">StackOverflow</a>.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
